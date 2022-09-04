@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "AdminBloqlar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2><b>BLOQLAR</b></h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>BASLIQ</th>
+        <th>SEKIL</th>
+        <th>SIL</th>
+        <th>GUNCELLE</th>
+        <th>DETALLAR</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.BloqID</td>
+            <td>@x.Basliq</td>
+            <td><img style="height: 1.5cm; width: 2cm;" src="~/Foto/@x.FotoBloq" /></td>
+            <td><a href="~/Admin/BloqSil/@x.BloqID" class="btn btn-danger" onclick="return confirm('Verilən silinsinmi ? Nəzərinizə çatdırmaq istəyirik ki, silinən verilən bir daha geri qayıtmayacaq')">Sil</a></td>
+            <td><a href="~/Admin/BloqGetir/@x.BloqID" class="btn btn-info">Guncelle</a></td>
+            <td><a href="#" class="btn btn-default">Detallar</a></td>
+        </tr>
+    }
+
+</table>
+
+<a href="~/Admin/YeniBloq" class="btn btn-primary">Yeni Bloq yarat</a>

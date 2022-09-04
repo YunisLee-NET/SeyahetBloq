@@ -1,0 +1,74 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #A64A69;
+            overflow-x: hidden;
+            padding-top: 16px;
+        }
+            .sidebar a {
+                padding: 6px 8px 6px 16px;
+                text-decoration: none;
+                font-size: 20px;
+                color: white;
+                display: block;
+            }
+
+                .sidebar a:hover {
+                    color: #f1f1f1;
+                }
+        .main {
+            margin-left: 160px; /* Same as the width of the sidenav */
+            padding: 0px 10px;
+        }
+        @@media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+
+                .sidebar a {
+                    font-size: 18px;
+                }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <a href="~/Admin/Index"><i class="fa fa-fw fa-home"></i> Ana Sehife</a>
+        <a href="~/Admin/AdminBloqlar"><i class="fa fa-image"></i> Bloqlar</a>
+        <a href="~/Admin/AdminYorumSiyahi"><i class="fa fa-commenting-o"></i> Yorumlar</a>
+        <a href="~/Admin/AdminElaqe"><i class="fa fa-fw fa-envelope"></i> Elaqe</a>
+        <a href="~/AnaSehife/Index" target="_blank"><i class="fa fa-fw fa-globe"></i> Sayta get</a>
+        <a href="~/Login/Login" onclick="return confirm('Niye bele tez cixirsan')"><i class="fa fa-fw fa-sign-out"></i> Çıxış</a>
+    </div>
+    
+    <div class="main">
+        @RenderBody()
+    </div>
+
+</body>
+</html>
+
+

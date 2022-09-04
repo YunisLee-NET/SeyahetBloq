@@ -1,0 +1,28 @@
+﻿@model Seyahet_Bloq_Proyekt.Models.Sinifler.Bloq
+@{
+    ViewBag.Title = "BloqGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Bloq guncelleme sehifesi</h2>
+<br />
+@using (Html.BeginForm("BloqGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.BloqID)
+    @Html.TextBoxFor(x => x.BloqID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Basliq)
+    @Html.TextBoxFor(x => x.Basliq, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarix)
+    @Html.TextBoxFor(x => x.Tarix, new { type = "date", @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.FotoBloq)
+    <input type="file" name="FotoBloq" />
+    <br />
+    @Html.LabelFor(x => x.Aciqlama)
+    @Html.TextAreaFor(x => x.Aciqlama, new { @class = "form-control", rows = "7" })
+    <br />
+    <button class="btn btn-success">Yadda saxla</button>
+}
+

@@ -1,0 +1,20 @@
+﻿@using Seyahet_Bloq_Proyekt.Models.Sinifler
+@model List<Haqqimizda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="content">
+    <div class="wrap">
+        <div class="about">
+            <h3>Haqqımızda</h3>
+            @foreach (var x in Model)
+            {
+                <img src="~/Foto/@x.FotoURL" />
+                <p>@x.Aciqlama</p>
+            }
+
+        </div>
+    </div>
+</div>

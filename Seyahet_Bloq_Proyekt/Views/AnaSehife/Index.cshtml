@@ -1,0 +1,93 @@
+﻿@using Seyahet_Bloq_Proyekt.Models.Sinifler
+@model List<Bloq>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+<div class="header-banner">
+    <div class="wrap">
+        <div class="banner">
+            <div class="indent">
+                <h2 class="indent-left margin-bot">Plan the Easy Trip</h2>
+                <div class="banner-left">
+                    <div class="con-text">
+                        <div class="grid1-img">
+                            <img src="~/web/images/glass.png" alt="">
+                        </div>
+                        <div class="grid1-desc">
+                            <p>Restoranlar</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="con-text">
+                        <div class="grid1-img">
+                            <img src="~/web/images/flight.png" alt="">
+                        </div>
+                        <div class="grid1-desc">
+                            <p>Uçuşlar</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="con-text">
+                        <div class="grid1-img">
+                            <img src="~/web/images/group.png" alt="">
+                        </div>
+                        <div class="grid1-desc">
+                            <p>Ediləcək şeylər</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="con-text">
+                        <div class="grid1-img">
+                            <img src="~/web/images/key.png" alt="">
+                        </div>
+                        <div class="grid1-desc">
+                            <p>Tətil kirayələri</p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="header_bottom_right_images">
+
+                    <div class="slider">
+                        <ul class="rslides" id="slider1">
+                            @foreach (var x in Model)
+                            {
+                                <li style="height: 370px; width: 670px;"><img src="~/Foto/@x.FotoBloq"></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class"content">
+    <div class="wrap">
+        <div class="wrapper">
+            <div class="con-top">
+                <h3>Səyahət bloquma xoş gəlmişsiniz!</h3>
+                <p style="text-align: justify;">Müasir həyatı səyahətsiz təsəvvür etmək mümkün deyil. Yüzlərlə insan səyahətə çıxır: onların bəziləri ezamiyyətə, bəziləri isə sadəcə istirahət etmək üçün gedirlər. Onlar səyahətə təyyarədə, qatarda, gəmidə və ya avtomobildə gedirlər. Əlbəttə, təyyarə ilə səyahət etmək - ən tez və ən rahat bir yoldur, lakin bunu da qeyd etmək lazımdır ki, həm də ən bahalı bir seçimdir. Qatarla səyahət etmək təyyarə ilə müqayisədə gec olsa da, onun öz üstünlükləri vardır. Siz səyahət etdiyiniz ölkənin görməli yerlərini daha yaxşı seyr edə bilərsiniz. Müasir qatarlar çox rahat avadanlıqla təchiz edilmişdir. Əlavə olaraq, yataq vaqonları və vaqon-restoranlar da vardır ki, ən uzun bir səyahəti rahatlıqla keçirmək mümkündür. Sürət, rahatçılıq və təhlükəsizlik qatar və təyyarə ilə səyahətin ən üstün cəhətləridir. Məhz buna görə də bir çox insanlar digər nəqliyyat vasitələri ilə müqayisədə təyyarə və qatara üstünlük verirlər. Dənizlə səyahət çox geniş yayılmışdır. Böyük gəmilərdə və balaca qayıqlarda xarici dövlətlərə səyahətə və vətənin maraqlı yerlərinə gəzintiyə çıxmaq olar. O ki, qaldı mənə, mən avtomobillə səyahətə çıxmağa daha çox üstünlük verirəm. Mən belə fikirləşirəm ki, bu, səyahət üçün daha rahat yoldur. Sizin qabaqcadan bilet sifariş etməyinizə və ya ağır çemodanlar daşımağınıza ehtiyac qalmır. Siz harada, nə qədər istəsəniz dayana bilərsiniz və bu haqda narahatçılıq çəkməzsiniz.</p>
+            </div>
+            @Html.Action("Partial1","AnaSehife")
+            <div class="grids">
+                <div class="box1">
+                    @Html.Action("Partial3","AnaSehife")
+                    <div class="padding1">
+                        <h4>Our Best Places</h4>
+                        @Html.Action("Partial4","AnaSehife")
+                        @Html.Action("Partial5","AnaSehife")
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

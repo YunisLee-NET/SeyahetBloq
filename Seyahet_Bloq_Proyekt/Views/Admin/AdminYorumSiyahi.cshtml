@@ -1,0 +1,31 @@
+﻿@using Seyahet_Bloq_Proyekt.Models.Sinifler
+@model List<Yorumlar>
+@{
+    ViewBag.Title = "AdminYorumSiyahi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>AdminYorumSiyahi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Istifadeci adi</th>
+        <th>Mail</th>
+        <th>Yorum</th>
+        <th>Bloq</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.YorumID</td>
+            <td>@x.IstifadeciAdi</td>
+            <td>@x.Mail</td>
+            <td>@x.Yorum</td>
+            <td>@x.Bloq.Basliq</td>
+            <td><a href="~/Admin/YorumSil/@x.YorumID" class="btn btn-danger" onclick="return confirm('Verilən silinsinmi ? Nəzərinizə çatdırmaq istəyirik ki, silinən verilən bir daha geri qayıtmayacaq')">Sil</a></td>
+        </tr>
+    }
+
+</table>

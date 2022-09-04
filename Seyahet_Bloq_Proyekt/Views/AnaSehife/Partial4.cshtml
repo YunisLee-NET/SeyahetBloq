@@ -1,0 +1,17 @@
+﻿@using Seyahet_Bloq_Proyekt.Models.Sinifler
+@model List<Bloq>
+
+<div class="box-left">
+    @foreach (var x in Model)
+    {
+        <div class="bot-img">
+            <img src="~/Foto/@x.FotoBloq" alt="" />
+        </div>
+        <div class="bot-desc">
+            <p>@x.Aciqlama.Substring(0,75)...</p>
+        </div>
+        <div class="clear"></div>
+    }
+
+
+</div>
